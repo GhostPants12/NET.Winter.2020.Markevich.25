@@ -36,6 +36,7 @@ namespace UrlDAL
 
                     if (urlAddress.GetParameters()?.Count >= 1)
                     {
+                        xmlWriter.WriteStartElement("parameters");
                         foreach (var parameter in urlAddress.GetParameters())
                         {
                             xmlWriter.WriteStartElement("parameter");
@@ -43,6 +44,7 @@ namespace UrlDAL
                             xmlWriter.WriteAttributeString("key", parameter.Key);
                             xmlWriter.WriteEndElement();
                         }
+                        xmlWriter.WriteEndElement();
                     }
 
                     xmlWriter.WriteEndElement();

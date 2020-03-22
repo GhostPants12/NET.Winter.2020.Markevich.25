@@ -22,7 +22,7 @@ namespace UrlBLL
         {
             if (!pattern.IsMatch(url))
             {
-                throw new ArgumentException($"{url} is incorrect.");
+                throw new ArgumentException($" {url} is invalid URL address.");
             }
 
             string[] splitUrl = Regex.Split(url, splitPattern);
