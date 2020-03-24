@@ -4,6 +4,6 @@ namespace BLL.Interfaces
 {
     public interface ILogger
     {
-        void Log(string message);
+        void LogError(string message);
     }
 }

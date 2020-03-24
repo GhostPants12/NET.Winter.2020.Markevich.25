@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BLL.Interfaces
 {
-    public interface IConverter
+    public interface IConverterService
     {
         void Convert(string sourcePath, string resultPath);
     }

@@ -7,9 +7,9 @@ namespace SOLID
     {
         static void Main(string[] args)
         {
-            var xmlService = (IConverter)new DependencyResolver.DependencyResolver().CreateXmlDomServiceProvider().GetService(typeof(IConverter));
+            var xmlService = (IConverterService)new DependencyResolver.DependencyResolver().CreateXmlDomServiceProvider().GetService(typeof(IConverterService));
             xmlService.Convert("url.txt", "urlsDOM.xml");
-            xmlService = (IConverter)new DependencyResolver.DependencyResolver().CreateXmlServiceProvider().GetService(typeof(IConverter));
+            xmlService = (IConverterService)new DependencyResolver.DependencyResolver().CreateXmlServiceProvider().GetService(typeof(IConverterService));
             xmlService.Convert("url.txt", "urls.xml");
         }
     }

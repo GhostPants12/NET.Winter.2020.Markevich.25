@@ -21,7 +21,7 @@ namespace UrlBLL
             NLog.LogManager.Configuration = config;
         }
 
-        public void Log(string message)
+        public void LogError(string message)
         {
             this.logger.Error(message);
         }

@@ -7,7 +7,7 @@ using Types;
 
 namespace UrlDAL
 {
-    public class URLReader : IReader
+    public class URLReader : IReader<string>
     {
         public IEnumerable<string> ReadInfo(string path)
         {

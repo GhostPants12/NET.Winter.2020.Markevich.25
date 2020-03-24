@@ -7,14 +7,14 @@ using Types;
 
 namespace UrlBLL
 {
-    public class UrlToXmlConverter : IConverter
+    public class UrlToXmlConverterService : IConverterService
     {
-        private IReader reader;
+        private IReader<string> reader;
         private IWriter<URLContainer> writer;
         private ITransformer<URLContainer> transformer;
         private ILogger logger;
 
-        public UrlToXmlConverter(IReader reader, IWriter<URLContainer> writer, ITransformer<URLContainer> transformer, ILogger logger)
+        public UrlToXmlConverterService(IReader<string> reader, IWriter<URLContainer> writer, ITransformer<URLContainer> transformer, ILogger logger)
         {
             this.reader = reader;
             this.writer = writer;
@@ -33,11 +33,11 @@ namespace UrlBLL
                 }
                 catch (Exception e)
                 {
-                    logger.Log(e.Message);
+                    logger.LogError(e.Message);
                 }
             }
 
-            this.writer.WriteToXml(resultPath, new ReadOnlyCollection<URLContainer>(toWriteList));
+            this.writer.WriteToXml(resultPath, toWriteList);
         }
     }
 }

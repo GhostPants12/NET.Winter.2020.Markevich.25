@@ -4,8 +4,8 @@ using System.Collections.ObjectModel;
 
 namespace DAL.Interfaces
 {
-    public interface IReader
+    public interface IReader<T>
     {
-        IEnumerable<string> ReadInfo(string path);
+        IEnumerable<T> ReadInfo(string path);
     }
 }

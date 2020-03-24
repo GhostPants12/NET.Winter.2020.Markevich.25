@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Xml;
 using DAL.Interfaces;
@@ -8,7 +9,7 @@ namespace UrlDAL
 {
     public class URLXmlWriter : IWriter<URLContainer>
     {
-        public void WriteToXml(string path, ReadOnlyCollection<URLContainer> urls)
+        public void WriteToXml(string path, IEnumerable<URLContainer> urls)
         {
             using (XmlWriter xmlWriter = XmlWriter.Create(path, new XmlWriterSettings()
             {

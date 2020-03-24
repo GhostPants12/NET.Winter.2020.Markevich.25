@@ -10,7 +10,7 @@ namespace UrlDAL
 {
     public class URLXmlDom : IWriter<URLContainer>
     {
-        public void WriteToXml(string path, ReadOnlyCollection<URLContainer> collection)
+        public void WriteToXml(string path, IEnumerable<URLContainer> collection)
         {
             XmlDocument doc = new XmlDocument();
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration( "1.0", "UTF-8", null );

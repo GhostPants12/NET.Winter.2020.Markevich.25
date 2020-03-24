@@ -13,10 +13,10 @@ namespace DependencyResolver
         public IServiceProvider CreateXmlServiceProvider()
         {
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IConverter, UrlToXmlConverter>()
+                .AddSingleton<IConverterService, UrlToXmlConverterService>()
                 .AddSingleton<ITransformer<URLContainer>, URLTransformer>() 
                 .AddSingleton<ILogger, WrongURLLogger>()
-                .AddSingleton<IReader, URLReader>()
+                .AddSingleton<IReader<string>, URLReader>()
                 .AddSingleton<IWriter<URLContainer>, URLXmlWriter>()
                 .BuildServiceProvider();
             return serviceProvider;
@@ -25,10 +25,10 @@ namespace DependencyResolver
         public IServiceProvider CreateXmlDomServiceProvider()
         {
             var serviceProvider = new ServiceCollection()
-                .AddSingleton<IConverter, UrlToXmlConverter>()
+                .AddSingleton<IConverterService, UrlToXmlConverterService>()
                 .AddSingleton<ITransformer<URLContainer>, URLTransformer>() 
                 .AddSingleton<ILogger, WrongURLLogger>()
-                .AddSingleton<IReader, URLReader>()
+                .AddSingleton<IReader<string>, URLReader>()
                 .AddSingleton<IWriter<URLContainer>, URLXmlDom>()
                 .BuildServiceProvider();
             return serviceProvider;

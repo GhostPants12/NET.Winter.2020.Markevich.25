@@ -14,7 +14,7 @@ namespace UrlBLL
 
         public URLTransformer()
         {
-            this.pattern = new Regex(@"(\S*)://(\S*)/(\S*)");
+            this.pattern = new Regex(@"(\w+)://(\w+)");
             this.splitPattern = @"(://)|(/)|(\?)";
         }
 
