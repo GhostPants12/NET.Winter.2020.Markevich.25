@@ -1,29 +1,29 @@
 ﻿using System;
-using NLog;
 using BLL.Interfaces;
+using NLog;
 
 namespace UrlBLL
 {
-    public class WrongURLLogger : BLL.Interfaces.ILogger
+    /// <summary>Class-container for the URL logger that logs errors encounted while converting URL address.</summary>
+    public class WrongURLLogger
     {
-        private Logger logger = LogManager.GetCurrentClassLogger();
-
+        /// <summary>Initializes a new instance of the <see cref="WrongURLLogger"/> class.</summary>
         public WrongURLLogger()
         {
+            this.Logger = LogManager.GetCurrentClassLogger();
             var config = new NLog.Config.LoggingConfiguration();
 
             var logfile = new NLog.Targets.FileTarget("logfile") { FileName = "logfile.txt" };
-            var logconsole = new NLog.Targets.ConsoleTarget("logconsole");
-            
-            config.AddRule(LogLevel.Info, LogLevel.Fatal, logconsole);
+            var logConsole = new NLog.Targets.ConsoleTarget("logConsole");
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, logConsole);
             config.AddRule(LogLevel.Debug, LogLevel.Fatal, logfile);
-            
+            logConsole.Dispose();
+            logfile.Dispose();
             NLog.LogManager.Configuration = config;
         }
 
-        public void LogError(string message)
-        {
-            this.logger.Error(message);
-        }
+        /// <summary>Gets the logger.</summary>
+        /// <value>The logger.</value>
+        public ILogger Logger { get; }
     }
 }

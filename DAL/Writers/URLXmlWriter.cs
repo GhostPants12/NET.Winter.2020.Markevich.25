@@ -9,7 +9,10 @@ namespace UrlDAL
 {
     public class URLXmlWriter : IWriter<URLContainer>
     {
-        public void WriteToXml(string path, IEnumerable<URLContainer> urls)
+        /// <summary>Writes the sequence of T to the XML file using XMLWriter.</summary>
+        /// <param name="path">The path.</param>
+        /// <param name="collection">The collection.</param>
+        public void Write(string path, IEnumerable<URLContainer> urls)
         {
             using (XmlWriter xmlWriter = XmlWriter.Create(path, new XmlWriterSettings()
             {
