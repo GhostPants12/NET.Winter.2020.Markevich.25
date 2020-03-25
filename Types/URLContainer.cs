@@ -40,7 +40,7 @@ namespace Types
                 return null;
             }
 
-            return new ReadOnlyCollection<string>(path);
+            return new ReadOnlyCollection<string>(this.path);
         }
 
         /// <summary>Gets the parameters of URL address.</summary>

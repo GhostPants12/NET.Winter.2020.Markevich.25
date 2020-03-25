@@ -21,7 +21,7 @@ namespace UrlBLL
         /// <param name="url">The URL's string representation.</param>
         /// <returns>URLContainer object.</returns>
         /// <exception cref="ArgumentException">The string value is not a valid URL address.</exception>
-        public URLContainer Transform(string url)
+        public virtual URLContainer Transform(string url)
         {
             if (!this.pattern.IsMatch(url))
             {

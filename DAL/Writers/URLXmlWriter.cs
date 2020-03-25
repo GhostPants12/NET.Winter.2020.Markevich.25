@@ -12,12 +12,16 @@ namespace UrlDAL
         /// <summary>Writes the sequence of T to the XML file using XMLWriter.</summary>
         /// <param name="path">The path.</param>
         /// <param name="collection">The collection.</param>
-        public void Write(string path, IEnumerable<URLContainer> urls)
+        public virtual void Write(string path, IEnumerable<URLContainer> urls)
         {
+            if (urls is null)
+            {
+                throw new ArgumentNullException($"{nameof(urls)} is null.");
+            }
+
             using (XmlWriter xmlWriter = XmlWriter.Create(path, new XmlWriterSettings()
             {
                 Indent = true,
-                IndentChars = "\t",
             }))
             {
                 xmlWriter.WriteStartElement("urlAddresses");
@@ -48,6 +52,7 @@ namespace UrlDAL
                             xmlWriter.WriteAttributeString("key", parameter.Key);
                             xmlWriter.WriteEndElement();
                         }
+
                         xmlWriter.WriteEndElement();
                     }
 

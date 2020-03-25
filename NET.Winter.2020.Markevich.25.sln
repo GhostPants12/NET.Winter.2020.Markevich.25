@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyResolver", "Depen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{AE55B758-E004-4A1A-9493-3EED561D2350}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLIDTests", "SOLIDTests\SOLIDTests.csproj", "{85E63348-A720-4F8B-ADC4-BB04B4EC1FA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{AE55B758-E004-4A1A-9493-3EED561D2350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE55B758-E004-4A1A-9493-3EED561D2350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE55B758-E004-4A1A-9493-3EED561D2350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85E63348-A720-4F8B-ADC4-BB04B4EC1FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E63348-A720-4F8B-ADC4-BB04B4EC1FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E63348-A720-4F8B-ADC4-BB04B4EC1FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E63348-A720-4F8B-ADC4-BB04B4EC1FA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

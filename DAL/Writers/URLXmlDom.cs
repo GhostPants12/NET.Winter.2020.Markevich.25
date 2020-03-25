@@ -13,8 +13,13 @@ namespace UrlDAL
         /// <summary>Writes the sequence of T to the XML file using XML DOM.</summary>
         /// <param name="path">The path.</param>
         /// <param name="collection">The collection.</param>
-        public void Write(string path, IEnumerable<URLContainer> collection)
+        public virtual void Write(string path, IEnumerable<URLContainer> collection)
         {
+            if (collection is null)
+            {
+                throw new ArgumentNullException($"{nameof(collection)} is null.");
+            }
+
             XmlDocument doc = new XmlDocument();
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             XmlElement root = doc.DocumentElement;
